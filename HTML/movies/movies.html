@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function Lang(){
+        var lan=document.getElementById("lang").value
+        if (lan=='English'){
+            window.location.href="./english.html"
+        }
+        else if (lan=='Hindi'){
+            window.location.href="./hindi.html"
+        }
+        else{
+            window.location.href="./malayalam.html"
+        }
+    }
+    </script>
+    <STYle>
+       body{
+         background-color: rgb(140, 224, 235);
+    font-family: sans-serif;
+       }
+       div{
+        height:200px;
+        width:200px;
+        margin: 100px;
+        margin-left: 650PX;
+       }
+       h2{
+        font-size: 40px;
+       }
+       select{
+        border-radius: 5px;
+        height: 40px;
+        width:150px;
+       }
+       button{
+        margin-left: 40px;
+        background-color: rgb(86, 151, 241);
+        font-size: 16px;
+        height: 30px;
+        border-radius: 5px;
+      }
+    </STYle>
+</head>
+<body>
+        <h1><img src="./spotstar-logo.png" height="80" width="240"></h1>
+        <div>
+            <h2>Movies:</h2>
+        <label for="lang">Language Choice:</label><BR></BR>
+        <select id="lang">
+            <option>English</option>
+            <option>Hindi</option>
+            <option>Malayalam</option>
+        </select><BR></BR>        
+        <button onclick="Lang()">Next</button></div>
+
+   
+</body>
+</html>
