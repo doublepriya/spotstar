@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpotStar</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <script>
+        function Validate(){
+            var PreDefUserName='Spot123'
+            var PreDefPassword='Spot@123'
+            var UserName=document.getElementById("uname").value 
+            var Password=document.getElementById("pswd").value 
+            if((PreDefUserName==UserName)&&(PreDefPassword==Password)){
+                window.location.href="./welcome.html"
+            }
+            else{
+                document.getElementById("error").innerHTML="Invalid Username or Incorrect Password"
+                document.getElementById("error").style.color="red"
+            }
+        }
+    </script>
+    <style>
+        para{
+            font-size: 14px;            
+        }
+        top{
+            text-align: center;
+            margin: 100px;
+        }
+        p{
+            font-size: 14px;
+        }
+        input{
+            border-radius: 5px;
+            border-color: white;
+            height: 50px;
+            width: 250px;
+        }
+        div2{
+            margin: 100px;
+            padding:30px;
+        }
+        div3{
+            align-items: center;
+        }
+        button{
+            height: 30px;
+            width: 150px;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+        
+    </style>
+</head>
+
+<body> 
+    <div1 id="top"> 
+        <h1><img src="./media/spotstar-logo.png" height="80px" width="240px"></h1>
+        <p id="para">Welcome to Spotstar, your premier destination for seamless entertainment. Dive into a vast library of songs and movies, perfectly curated for your taste. Whether you're here to discover new music or binge-watch the latest films, we've got you covered. Sign in to access your personalized experience, or create an account to start your entertainment journey today.</p>
+    </div1>   
+     <BR></BR>
+    <div2>
+        <h3><center>Login:</n3>  
+            <BR></BR>      
+        <table style="background-color: whitesmoke;">            
+            <tr><td><input type="text" name="uname" id="uname" placeholder="Username"></td></tr>  
+            <tr><td></td></tr>    
+            <tr><td><input type="password" name="pswd" id="pswd" placeholder="Password"></td></tr>
+            <tr><td>
+                <center><button onclick="Validate()" style="background-color: rgb(86, 151, 241); color: darkblue;">Login</button>
+                </td></tr>
+        </table>
+    </div2>
+    <strong id="error"></strong><BR></BR>
+   <div3>
+    <a href="./forgotpswd.html">Forgot password?</a><BR></BR>
+    ARE YOU A NEW USER?<BR></BR>
+     <a href="./signup.html">Signup</a> here!</div3>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>otp-verification</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      input{
+        height: 40px;
+        border-radius: 5px;
+        border-color: aqua;
+      }
+      button{
+        height: 30px;
+        background-color: rgb(86, 151, 241);
+        border-radius: 5px;
+      }
+      body{
+    background-color: rgb(140, 224, 235);
+    font-family: sans-serif;
+}
+    </style>
+    <script>
+        var OTPNumber=Math.floor(Math.random()*999999)
+        alert(OTPNumber)
+        function OTPVerification(){
+            var UserOTP=document.getElementById("otp").value 
+            if(OTPNumber==UserOTP){
+                window.location.href="./regsuccess.html"
+            }else{
+                document.getElementById("error").innerHTML="Incorrect OTP!!!"
+                document.getElementById("error").style.color="red"            
+              }
+        }
+        function ResendOTP(){
+            window.location.href="./otp.html"
+        }
+    </script>
+
+</head>
+<body>
+    <h1><img src="./media/spotstar-logo.png" height="80" width="240"></h1>
+
+    <h2>OTP-verification</h2> <BR></BR>
+    <input type="number" placeholder="Enter OTP Number" id="otp" placeholder="Enter OTP">
+    <BR></BR>
+    <button onclick="OTPVerification()">Verify</button>
+    <strong id="error"></strong>
+    <h3>Do you wants to send OTP again?</h3>
+    <button onclick="ResendOTP()">Resend OTP</button>
+    </body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>otp-verification</title>
+    <link rel="stylesheet" href="styles.css">  
+    <script>
+        var OTPNumber=Math.floor(Math.random()*999999)
+        alert(OTPNumber)
+        function OTPVerification(){
+            var UserOTP=document.getElementById("otp").value 
+            if(OTPNumber==UserOTP){
+                window.location.href="./regsuccess.html"
+            }else{
+                document.getElementById("error").innerHTML="Incorrect OTP!!!"
+                document.getElementById("error").style.color="red"            
+              }
+        }
+        function ResendOTP(){
+            window.location.href="./otp.html"
+        }
+    </script>
+</head>
+<body>
+       <h1><img src="./media/spotstar-logo.png"></h1>
+    OTP-verification <BR></BR>
+    <label for="otp"></label><input type="number" name="otp" id="otp" placeholder="Enter OTP">
+    <BR></BR><a href="./pswdupdate.html" class="button-link">
+  <button>Verify</button>
+</a><BR></BR>
+    Resend otp? <BR></BR>
+    <a href="./index.html" class="button-link">
+  <button>Next</button>
+</a>
+</body>
+</html>

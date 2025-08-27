@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>      
+      div{
+            align-content: center;
+            margin-left: 650px;
+            margin-top: 50px;
+      }
+      h2{
+        text-align: center;
+        font-size: 35px;
+      }
+      input{
+        border-radius: 5px;
+        border-color: aquamarine;
+        height: 30px;
+        width:250px;
+      }
+      button{
+        margin-left: 40px;
+        background-color: rgb(86, 151, 241);
+        font-size: 16px;
+        height: 30px;
+        border-radius: 5px;
+      }
+    </style>
+    <script>
+        function Signupvalidation(){
+         // Phone Number Validation
+        var Phone=document.getElementById("phone").value 
+        var PhoneFlag=false 
+        if((Phone>=6000000000)&&(Phone<=9999999999)){
+          PhoneFlag=true
+        }
+        //name validation
+        var Fname=document.getElementById("fname").value 
+        var Lname=document.getElementById("lname").value
+        var Nameflag=false
+        if((Fname.length>=5)&&(Lname.length>=5)){
+          Nameflag=true
+        }
+        // Email Validation
+        var Email=document.getElementById("mail").value 
+        var flag1=true 
+        var flag2=false 
+        var EmailFlag=false 
+        for(var i=0;i<Email.length;i++){
+          if((Email[i]>='A')&&(Email[i]<='Z')){
+            flag1=false
+          }
+          if(Email[i]=='@'){
+            flag2=true
+          }
+        }
+        if((flag1==true)&&(flag2==true)){
+          EmailFlag=true
+        }
+         // Password Validation
+      var Password=document.getElementById("pass").value 
+      var PasswordFlag=false 
+      var Upper=0
+      var Lower=0
+      var Num=0
+      var Special=0
+      for(var i=0;i<Password.length;i++){
+        var char=Password[i]
+        if((char>='A')&&(char<='Z')){
+          Upper++
+        }else if((char>='a')&&(char<='z')){
+          Lower++
+        }else if((char>='0')&&(char<='9')){
+          Num++
+        }else{
+          Special++
+        }
+      }
+      if((Password.length>=8)&&(Password.length<=16)&&(Upper>=1)&&(Lower>=1)&&(Num>=1)&&(Special>=1)){
+        PasswordFlag=true
+      }
+
+      // Confirm Password
+      var ConfirmPassword=document.getElementById("confirm").value 
+      var ConfirmFlag=false 
+      if(Password==ConfirmPassword){
+        ConfirmFlag=true
+      }
+
+      // Final Validation
+      if((Nameflag==true)&&(PhoneFlag==true)&&(EmailFlag==true)&&(PasswordFlag==true)&&(ConfirmFlag==true)){
+          window.location.href="./otp.html"
+      }else{
+        document.getElementById("error").innerHTML="Invalid Details"
+        document.getElementById("error").style.color="red"
+      }
+    }
+    </script>
+</head>
+<body>
+    <h1><img src="./media/spotstar-logo.png" height="80" width="240"></h1>    
+      <h2>Signup</h2>    
+    <div>
+    <input type="text" id="fname" placeholder="First Name"><BR></BR>    
+    <input type="text" id="lname" placeholder="Last Name"><BR></BR>    
+    <input type="number" id="phone" placeholder="Phone no."><BR></BR>    
+    <input type="email" id="mail" placeholder="E-mail id"><BR></BR>    
+    <input type="password" id="pass" placeholder="Create password"><BR></BR>   
+    <input type="password" id="confirm" placeholder="Confirm password"><BR></BR>
+    <strong id="error"></strong>
+    <BR></BR>
+    <button>Cancel</button>
+  <button onclick="Signupvalidation()">Next</button>
+ </div>  
+</body>
+</html>
